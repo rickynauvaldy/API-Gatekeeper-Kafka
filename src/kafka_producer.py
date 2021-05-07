@@ -5,15 +5,13 @@
 # flask run
 
 # import libs
-from flask import Flask
-from flask import request
-from flask import abort
-# from flask_inputs.validators import JsonSchema
+from flask import Flask, request, abort
+
+## This lib will be used later as validators
+## from flask_inputs.validators import JsonSchema
 
 from pykafka import KafkaClient
 import json
-from datetime import datetime
-import uuid
 import time
 
 # initiate Flask instance

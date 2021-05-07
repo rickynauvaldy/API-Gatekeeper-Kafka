@@ -1,43 +1,97 @@
 {
-"change": [
-{
-"kind": "insert",
-"table": "mytable",
-"columnnames": ["a", "b", "c"],
-"columntypes": ["INTEGER", "TEXT", "TEXT"],
-"columnvalues": [1, "Backup and Restore", "2018-03-27 11:58:28.988414"]
-},
-{
-"kind": "insert",
-"table": "mytable",
-"columnnames": ["a", "b", "c"],
-"columntypes": ["INTEGER", "TEXT", "TEXT"],
-"columnvalues": [2, "Test 2", "2019-03-27 10:13:13.948514"]
-},
-{
-"kind": "insert",
-"table": "mytable",
-"columnnames": ["a", "b", "c"],
-"columntypes": ["INTEGER", "TEXT", "TEXT"],
-"columnvalues": [3, "Test 3", "2019-04-28 10:24:30.183414"]
-},
-{
-"kind": "delete",
-"table": "mytable",
-"oldkeys": {
-"keynames": ["a", "c"],
-"keytypes": ["INTEGER", "TEXT"],
-"keyvalues": [1, "2018-03-27 11:58:28.988414" ]
-}
-},
-{
-"kind": "delete",
-"table": "mytable",
-"oldkeys": {
-"keynames": ["a", "c"],
-"keytypes": ["INTEGER", "TEXT"],
-"keyvalues": [3, "2019-04-28 10:24:30.183414" ]
-}
-}
-]
-}
+    "change": [
+      {
+        "kind": "insert",
+        "table": "mytable",
+        "columnnames": [
+          "a",
+          "b",
+          "c"
+        ],
+        "columntypes": [
+          "INTEGER",
+          "TEXT",
+          "TEXT"
+        ],
+        "columnvalues": [
+          1,
+          "Backup and Restore",
+          "2018-03-27 11:58:28.988414"
+        ]
+      },
+      {
+        "kind": "insert",
+        "table": "mytable",
+        "columnnames": [
+          "a",
+          "b",
+          "c"
+        ],
+        "columntypes": [
+          "INTEGER",
+          "TEXT",
+          "TEXT"
+        ],
+        "columnvalues": [
+          2,
+          "Test 2",
+          "2019-03-27 10:13:13.948514"
+        ]
+      },
+      {
+        "kind": "insert",
+        "table": "mytable",
+        "columnnames": [
+          "a",
+          "b",
+          "c"
+        ],
+        "columntypes": [
+          "INTEGER",
+          "TEXT",
+          "TEXT"
+        ],
+        "columnvalues": [
+          3,
+          "Test 3",
+          "2019-04-28 10:24:30.183414"
+        ]
+      },
+      {
+        "kind": "delete",
+        "table": "mytable",
+        "oldkeys": {
+          "keynames": [
+            "a",
+            "c"
+          ],
+          "keytypes": [
+            "INTEGER",
+            "TEXT"
+          ],
+          "keyvalues": [
+            1,
+            "2018-03-27 11:58:28.988414"
+          ]
+        }
+      },
+      {
+        "kind": "delete",
+        "table": "mytable",
+        "oldkeys": {
+          "keynames": [
+            "a",
+            "c"
+          ],
+          "keytypes": [
+            "INTEGER",
+            "TEXT"
+          ],
+          "keyvalues": [
+            3,
+            "2019-04-28 10:24:30.183414"
+          ]
+        }
+      }
+    ]
+  }
