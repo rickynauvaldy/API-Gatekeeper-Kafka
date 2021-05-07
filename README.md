@@ -113,15 +113,12 @@ The data looks like the following:
 ```
 
 # Flow
-- Import required modules
-- define `concat_name` function for further use in transforming nested JSON to a comma seperated value
-- Set data_path to match your resources folder
-- get all filenames
-- for each filename, check whether the file is empty (skipped if it is), `json.load()` the row and append to a list
-- Progress print is available per `counter` rows
-- `genres` and `spoken_languages` column is transformed using the `concat_name` function
-- Transform the dataframe into json
-- Dump the data into a file
+![Alt text](img/flow.jpg?raw=true "Postman")
+- JSON formatted input will be provided to API
+- API will validate the input
+- Validated message will be produce as a Kafka message
+- Consumer will consume Kafka message
+- Consumed message will be written to database (<i>work in progress</i>)
 
 # Running the Program
 - Make sure that all the prerequisites are satisfied
@@ -166,9 +163,9 @@ python kafka_consumer.py
 
 # Output
 - If the Flask application of `kafka_producer.py` runs well, it will gives an output as follows:
-![Alt text](img/kafka_producer.jpg?raw=true "Postman")
+![Alt text](img/kafka_producer.jpg?raw=true "Kafka Producer")
 - If the `kafka_consumer.py` runs well, it will gives an output as follows (empty when request is not sent already):
-![Alt text](img/kafka_consumer.jpg?raw=true "Postman")
+![Alt text](img/kafka_consumer.jpg?raw=true "Kafka Consumer")
 # Notes
 - The configuration is still hard-coded in the script. It will be better if it's stored in a configuration file.
 - The development of the program is not yet finished as it's not added with the JSON content validator in the `kafka_producer.py`, and it doesn't process the JSON message yet to be stored in the database in the `kafka_consumer.py`. It will be updated soon.
