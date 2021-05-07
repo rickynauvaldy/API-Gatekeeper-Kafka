@@ -2,7 +2,7 @@
  Create API to validate JSON input, send to Kafka when valid, and write it into database
 
 # Description
-As a data engineer, collaboration with back end team is inevitable. In this case, the back end team built a system to capture user activity data, while <b>the data engineer</b> will transport the data in real time using <a href="https://kafka.apache.org/">Apache Kafka</a> and put it in a database (in this case, <a href="https://www.postgresql.org/">PostgreSQL</a> / <a href="https://cloud.google.com/bigquery">Google BigQuery</a> [work in progress]). As accessing data directly to the database might harm the database performance, we will build an API to accept the back end team user activity in JSON format, while it's validated first as there are possibilty that the payload is non-standard, acting as a <b>Gatekeeper</b>.
+As a data engineer, collaboration with back end team is inevitable. In this case, the back end team built a system to capture user activity data, while the <b>data engineer</b> will transport the data in real time using <a href="https://kafka.apache.org/">Apache Kafka</a> and put it in a database (in this case, <a href="https://www.postgresql.org/">PostgreSQL</a> / <a href="https://cloud.google.com/bigquery">Google BigQuery</a> [work in progress]). As accessing data directly to the database might harm the database performance, we will build an API to accept the back end team user activity in JSON format, while it's validated first as there are possibilty that the payload is non-standard, acting as a <b>Gatekeeper</b>.
 
 # Prerequisites
 - List of requirements are available in the `requirements.txt` and can be installed by running `pip install -r requirements.txt`
