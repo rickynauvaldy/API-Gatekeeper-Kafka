@@ -125,7 +125,7 @@ The data looks like the following:
 
 # Running the Program
 - Make sure that all the prerequisites are satisfied
-- Start a <a href="https://zookeeper.apache.org/">Zookeeper</a> server and a Kafka server. For running in Windows, you might want to refer to <a>this page</a>.
+- Start a <a href="https://zookeeper.apache.org/">Zookeeper</a> server and a Kafka server. For running in Windows, you might want to refer to <a href="https://dzone.com/articles/running-apache-kafka-on-windows-os">this page</a>.
 
 ## Running `kafka_producer.py`
 - As the code configuration is still hard-coded, things that you might want to change are:
