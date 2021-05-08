@@ -2,13 +2,13 @@
  Create API to validate JSON input, send to Kafka when valid, and write it into database
 
 # Description
-As a data engineer, collaboration with back end team is inevitable. In this case, the back end team built a system to capture user activity data, while the <b>data engineer</b> will transport the data in real time using <a href="https://kafka.apache.org/">Apache Kafka</a> and put it in a database (in this case, <a href="https://www.postgresql.org/">PostgreSQL</a> / <a href="https://cloud.google.com/bigquery">Google BigQuery</a> [work in progress]). As accessing data directly to the database might harm the database performance, we will build an API to accept the back end team user activity in JSON format, while it's validated first as there are possibilty that the payload is non-standard, acting as a <b>Gatekeeper</b>.
+As a data engineer, collaboration with back end team is inevitable. In this case, the back end team built a system to capture user activity data, while the <b>data engineer</b> will transport the data in real time using <a href="https://kafka.apache.org/">Apache Kafka</a> and put it in a database (in this case, <a href="https://www.postgresql.org/">PostgreSQL</a> / <a href="https://cloud.google.com/bigquery">Google BigQuery</a>). As accessing data directly to the database might harm the database performance, we will build an API to accept the back end team user activity in JSON format, while it's validated first as there are possibilty that the payload is non-standard, acting as a <b>Gatekeeper</b>.
 
 # Prerequisites
 - List of requirements are available in the `requirements.txt` and can be installed by running `pip install -r requirements.txt`
 
 # Data
-The example of user activity data in JSON format is available in the `resources` folder with the name of `example.json`.
+The example of user activity data in JSON format is available in the `resources` folder with the name of `example-success.json` for success example, and `example-fail.json` for fail example.
 
 The data looks like the following:
 
@@ -115,10 +115,10 @@ The data looks like the following:
 # Flow
 ![Alt text](img/flow.jpg?raw=true "Postman")
 - JSON formatted input will be provided to API
-- API will validate the input
+- API will validate the input (<i>work in progress</i>)
 - Validated message will be produce as a Kafka message
 - Consumer will consume Kafka message
-- Consumed message will be written to database (<i>work in progress</i>)
+- Consumed message will be written to database
 
 # Running the Program
 - Make sure that all the prerequisites are satisfied
@@ -137,9 +137,10 @@ set FLASK_ENV=debug
 ```
 flask run
 ```
-
+As an alternative, you can run `kafka_producer.bat` from this repo.
 ## Running `kafka_consumer.py`
-- As the code configuration is still hard-coded, things that you might want to change are:
+- Config the database in `database.ini` file (see `database.ini.example` for `database.ini` example)
+- As the other code configuration is still hard-coded, things that you might want to change are:
   1. topic_name (e.g. `data_test`)
   2. bootstrap_servers (i.e. `bootstrap_servers=['localhost:9092']`)
   ```
@@ -167,7 +168,7 @@ python kafka_consumer.py
 - If the `kafka_consumer.py` runs well, it will gives an output as follows (empty when request is not sent already):
 ![Alt text](img/kafka_consumer.jpg?raw=true "Kafka Consumer")
 # Notes
-- The configuration is still hard-coded in the script. It will be better if it's stored in a configuration file.
+- Some configurations are still hard-coded in the script. It will be better if it's stored in a configuration file.
 - The development of the program is not yet finished as it's not added with the JSON content validator in the `kafka_producer.py`, and it doesn't process the JSON message yet to be stored in the database in the `kafka_consumer.py`. It will be updated soon.
 - This code is made as a Week 4 Task in the Academi by blank-space Data Engineering Track Program (https://www.blank-space.io/program)
 
