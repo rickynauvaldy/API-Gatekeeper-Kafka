@@ -1,0 +1,27 @@
+{
+  "activities": [
+      {
+          "operation": "insert",
+          "table": "table1",
+          "col_names": ["a", "b", "c"],
+          "col_types": ["INTEGER", "TEXT", "TEXT"],
+          "col_values": [1, "Backup and Restore", "2018-03-27 11:58:28.988414"]
+      },
+      {
+          "operation": "delete",
+          "table": "table1",
+          "old_value": {
+              "col_names": ["a", "c"],
+              "col_types": ["INTEGER", "TEXT"],
+              "col_values": [1, "2018-03-27 11:58:28.988414"]
+          }
+      },
+      {
+        "operation": "insert",
+        "table": "table1",
+        "col_names": ["a", "b", "c"],
+        "col_types": ["INTEGER", "TEXT", "TEXT"],
+        "col_values": [2, "All Good", "2021-05-09 11:58:28.988414"]
+    }
+  ]
+}

@@ -6,12 +6,12 @@
 
 # import libs
 from flask import Flask, request, abort
+import json
 
 ## This lib will be used later as validators
 ## from flask_inputs.validators import JsonSchema
 
 from pykafka import KafkaClient
-import json
 import time
 
 # initiate Flask instance
